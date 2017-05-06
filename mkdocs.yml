@@ -1,0 +1,24 @@
+site_name: Verification for Automated Production Systems
+site_url: https://formal.iti.kit.edu/
+#weigl/verifaps/
+repo_url: https://github.com/example/repository/
+site_description:
+site_author: Alexander Weigl <weigl@kit.edu>
+
+pages:
+  - VerifAPS     : index.md
+  - geteta       : geteta/index.md
+  - stvs         : stvs/index.md
+  - iec61131lang : iec61131lang/index.md
+  - iec-symbex   : iec-symbex/index.md
+  - iec-xml      : iec-xml/index.md
+  - smv-model    : smv-model/index.md
+
+theme_dir: kit_theme
+
+markdown_extensions:
+  - smarty
+  - toc:
+      permalink: True
+      separator: "_"
+  - sane_lists
