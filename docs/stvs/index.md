@@ -49,7 +49,19 @@ Before you can use the full feature set you need to install z3, geteta, and nuXm
 
 ## Downloads
 
-<dl>
+<dl> 
+  <dt>Version 1.3.0 (20.07.2017)</dt>
+  <dd>
+    <a href="stverificationstudio-all-1.3.0.jar">stverificationstudio-all-1.3.0.jar</a>
+    <ul>
+      <li>Important: examples not finished</li>
+      <li>Specification supports navigation with tab and cursor keys</li>
+      <li>New UI of the specification table</li>
+      <li>Bug fixes in syntax highlightning</li>
+      <li>New XML-Namespace for config, session and specification files</li>
+      <li>New action: Resize of the specification </li>
+    </ul>
+  </dd>
   <dt>Version 1.2.0-beta (14.04.2017)</dt>
   <dd>
     <a href="stverificationstudio-all-1.2.0-beta.jar">stverificationstudio-all-1.2.0-beta.jar</a>
