@@ -49,7 +49,7 @@ Before you can use the full feature set you need to install z3, geteta, and nuXm
 
 ## Downloads
 
-<dl> 
+<dl>
   <dt>Version 1.3.0 (20.07.2017)</dt>
   <dd>
     <a href="stverificationstudio-all-1.3.0.jar">stverificationstudio-all-1.3.0.jar</a>
@@ -64,7 +64,7 @@ Before you can use the full feature set you need to install z3, geteta, and nuXm
   </dd>
   <dt>Version 1.2.0-beta (14.04.2017)</dt>
   <dd>
-    <a href="stverificationstudio-all-1.2.0-beta.jar">stverificationstudio-all-1.2.0-beta.jar</a>
+    <a href="stverppppppificationstudio-all-1.2.0-beta.jar">stverificationstudio-all-1.2.0-beta.jar</a>
     <ul>
       <li>add examples menu</li>
       <li>UI improvments in dialogs</li>
@@ -83,7 +83,12 @@ Before you can use the full feature set you need to install z3, geteta, and nuXm
 The sources are available
 on <a href="https://github.com/VerifAPS/stvs">github.com/VerifAPS/stvs</a>.
 
-<h3>Acknowledgement</h3>
+## Documentation Material
+
+* Industry-Day (20. July 2017) [Presentation](presentation.pdf)
+
+
+### Acknowledgement
 
 <p> This software was designed and implemented during the
   course <a href="/teaching/pse/201617/automation/"><emph>Praxis der
@@ -98,9 +103,9 @@ on <a href="https://github.com/VerifAPS/stvs">github.com/VerifAPS/stvs</a>.
   </ul>
 </p>
 
-<h3>Contact</h3>
+### Contact
 
-<p>
-Alexander Weigl &mdash; weigl@kit.edu
-<p>
+* Mattias Ulbrich &mdash; ulbrich@kit.edu
+* Alexander Weigl &mdash; weigl@kit.edu
+
 Feel free to use the <a href="https://github.com/VerifAPS/stvs/issues">issues tracker</a>.

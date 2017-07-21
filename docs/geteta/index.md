@@ -82,7 +82,7 @@ sequence given a valid sequence of input values.
 
 The test tables are serialized into XML, following the scheme
 of [`exteta-1.0.xsd`]().
-The XML contains three parts under the root element.
+The XML contains three parts under the root entry.
 
 ### `<variables>`
 
