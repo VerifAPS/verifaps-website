@@ -1,18 +1,31 @@
 # Verification for Automated Production Systems
 
+![VerifAPS Logo](verifaps-logo.svg)
 
+VerifAPS is a software project that consists out of multiple 
+subprojects for the verification of automated production plants, i.e. programmable logic controller software. 
 
-## Projects
+VerifAPS can be used as a library. For this several facades are exposed, for e. g. parsing Structured Text, PLCOpenXML or symbolic execution. [More Information](library/index.md)
 
+Or you can use the exposed programs. 
+
+## Applications
+
+- [rvt-aps](rvt/) -- Regression Verification 
 - [geteta](geteta/index.md) -- Genteralized Test Tables for functional verification
-- [stvs](stvs/index.md) -- Graphical user interface
-- [iec61131lang](iec61131lang/index.md) -- Parser and AST for IEC61131-3
-- [iec-symbex](iec-symbex/index.md) -- Symbolic Execution
-- [iec-xml](iec-xml/index.md) -- PLCOpenXML parser
-- [smv-model](smv-model/index.md) -- AST and printer for Symbolic Model Verifier format
+- [stvs](stvs/index.md) -- A graphical user interface for Generalized Test
+  Tables.
+
+
+## Getting Started
+
+You can obtain the library via [github](https://github.com/verifaps/verifaps-lib). 
+Please follow the instruction on the [README.md](https://github.com/verifaps/verifaps-lib/README.md).
 
 
 ## Maven Repository
+
+You can find old versions of VerifAPS here: 
 
 ```
 ...
@@ -24,5 +37,8 @@
     </repositories>
 ...
 ```
+
+New repository in planning.
+
 
 Funded within [IMPROVE APS](https://formal.iti.kit.edu/improve-aps/)

@@ -1,7 +1,4 @@
-# geteta &mdash; Generalized Test Tables
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/655e1ba61c2040eb8bccdb8f8a3799d1)](https://www.codacy.com/app/wadoon/geteta?utm_source=github.com&utm_medium=referral&utm_content=VerifAPS/geteta&utm_campaign=badger)
-[![CircleCI](https://circleci.com/gh/VerifAPS/geteta.svg?style=svg)](https://circleci.com/gh/VerifAPS/geteta)
+# geteta &mdash; Generalized Test Tables [![Codacy Badge](https://api.codacy.com/project/badge/Grade/655e1ba61c2040eb8bccdb8f8a3799d1)](https://www.codacy.com/app/wadoon/geteta?utm_source=github.com&utm_medium=referral&utm_content=VerifAPS/geteta&utm_campaign=badger) [![CircleCI](https://circleci.com/gh/VerifAPS/geteta.svg?style=svg)](https://circleci.com/gh/VerifAPS/geteta)
 
 Generalized Test Tables ensures safety in automation software.
 
@@ -9,13 +6,16 @@ Generalized Test Tables ensures safety in automation software.
     * Alexander Weigl <weigl@kit.edu>
 * License: GPL v3
 
+## Getting Started
+
 ## Download
 
 These are jar files include all dependencies:
 
-* 0.5.0-alpha: **not released**
+* 0.5.0-SNAPSHOT: **not released**
     * new automata model
     * different verification techniques (IC3, BMC, LTL)
+    * **latest useable version for [stvs](../stvs/index.md)**
 * 0.4.4: [geteta-0.4.4-exe.jar](downloads/geteta-0.4.4-exe.jar)
     * Fix a bug in the clocks.</li>
 * 0.4.3: [geteta-0.4.3-exe.jar](downloads/geteta-0.4.3-exe.jar)
@@ -222,13 +222,6 @@ You can select the bit width of the ST data types. **currently not implemented**
 
 #### `<functions>`
 
-Between this tag you can define arbitrary function as Structured Text code.
-These function are usable within the cell expressions as regular function calls.
-
-# Featured
-
-* [ ] gotos
-    * [ ] conditionals
-* [ ] User-defined integer bit widths
-* [ ] CI tests with nuxmv
-* [ ] load options via a properties file
+Between this tag you can define arbitrary function as
+Structured Text code. These function are usable within the
+cell expressions as regular function calls.

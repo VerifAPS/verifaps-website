@@ -9,10 +9,8 @@ pages:
   - VerifAPS     : index.md
   - geteta       : geteta/index.md
   - stvs         : stvs/index.md
-  - iec61131lang : iec61131lang/index.md
-  - iec-symbex   : iec-symbex/index.md
-  - iec-xml      : iec-xml/index.md
-  - smv-model    : smv-model/index.md
+  - library      : library/index.md
+  - demo         : demofinal/demo_final_workshop.md
 
 theme_dir: kit_theme
 

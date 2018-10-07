@@ -43,7 +43,7 @@ canvas,
 video {
   display: inline-block;
 }
-/* (en) HTML5 - don't show <audio> element if there aren't controls */
+/* (en) HTML5 - don't show <audio> entry if there aren't controls */
 /* (de) HTML5 - <audio> ohne Kontrollelemente sollten nicht angezeigt werden */
 audio:not([controls]) {
   display: none;
