@@ -1,5 +1,6 @@
 #!/bin/bash 
 
 
-mkdocs build --clean
-rsync --delete -vr site/ i57adm.ira.uka.de:htdocs/weigl/verifaps/
+make clean html
+
+rsync --delete -vr build/html/ i57adm.ira.uka.de:htdocs/weigl/verifaps/

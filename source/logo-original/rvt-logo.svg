@@ -15,7 +15,7 @@
    viewBox="0 0 459.28572 235.71429"
    id="svg6563"
    version="1.1"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="rvt-logo.svg">
   <defs
      id="defs6565">
@@ -80,8 +80,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="350.69404"
-     inkscape:cy="304.95779"
+     inkscape:cx="311.05118"
+     inkscape:cy="208.80625"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -89,10 +89,10 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1858"
-     inkscape:window-height="1177"
-     inkscape:window-x="54"
-     inkscape:window-y="-8"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata6568">
@@ -188,18 +188,17 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:132.50782776px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="169.16376"
        y="126.6707"
        id="text6573"
-       sodipodi:linespacing="125%"
        inkscape:transform-center-x="324.59382"
        inkscape:transform-center-y="167.3164"><tspan
          sodipodi:role="line"
          id="tspan6575"
          x="169.16376"
          y="126.6707"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold'">rvt</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:132.50782776px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'monospace Bold'">rvt</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 239.99999,200.93364 352.85714,-5.4949395"
@@ -283,28 +282,37 @@
     <text
        inkscape:transform-center-y="167.3164"
        inkscape:transform-center-x="324.59382"
-       sodipodi:linespacing="125%"
        id="text7725"
-       y="542.38501"
-       x="133.44948"
-       style="font-style:normal;font-weight:normal;font-size:132.50782776px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       y="548.4118"
+       x="242.7352"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:-4.6875px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold'"
-         y="542.38501"
-         x="133.44948"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:132.50782776px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'monospace Bold';letter-spacing:-4.6875px"
+         y="548.4118"
+         x="242.7352"
          id="tspan7727"
          sodipodi:role="line">rvt</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:159.34158325px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:none;fill-opacity:1;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       x="106.09686"
-       y="488.12335"
-       id="text7735"
-       sodipodi:linespacing="125%"><tspan
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;"
+       x="185.11472"
+       y="471.38229"
+       id="text7735"><tspan
          sodipodi:role="line"
          id="tspan7737"
-         x="106.09686"
-         y="488.12335"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Segoe Print';-inkscape-font-specification:'Segoe Print';fill:none;fill-opacity:1;stroke:#000000;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">	≈</tspan></text>
+         x="185.11472"
+         y="471.38229"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:159.34158325px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;">≈</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:92.97549438px;line-height:154.95916748px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;stroke-width:6.19836617px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="51.749584"
+       y="545.61798"
+       id="text51"><tspan
+         sodipodi:role="line"
+         id="tspan49"
+         x="51.749584"
+         y="545.61798"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:6.19836617px;fill:#333333;">APS</tspan></text>
   </g>
 </svg>
