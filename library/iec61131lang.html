@@ -1,0 +1,297 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>iec61131lang &#8212; VerifAPS 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+    <link rel="canonical" href="http://formal.iti.kit.edu/verifapslibrary/iec61131lang.html"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/verifaps-logo.svg" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Tools and Library for the Verification of Automated Production System</p>
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Library Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rvt/index.html">aps-rvt – Regression Verification for APS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geteta/index.html">geteta — Generalized Test Tables  </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geteta/index.html#xml-format-of-generalized-test-tables">XML-Format of Generalized Test tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stvs/index.html">STVS – A GUI for Geteta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demofinal/index.html">Demonstration from the Final Workshop</a></li>
+</ul>
+
+
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">iec61131lang</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li><a class="reference internal" href="#from-the-repository">From the repository</a></li>
+<li><a class="reference internal" href="#from-source">from source</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#changelog">Changelog</a></li>
+<li><a class="reference internal" href="#todo">TODO</a></li>
+<li><a class="reference internal" href="#language-features">Language Features</a></li>
+<li><a class="reference internal" href="#sequential-function-chart-syntax">Sequential Function Chart Syntax</a><ul>
+<li><a class="reference internal" href="#example">Example:</a></li>
+<li><a class="reference internal" href="#ebnf">EBNF</a></li>
+</ul>
+</li>
+</ul>
+
+<header style="text-align:center">
+  <hr>
+
+  <div>
+    Funded by IMPROVE APS project:<br>
+    <a href="http://formal.iti.kit.edu/projects/improve-aps/">
+      <img src="https://formal.iti.kit.edu/projects/improve-aps/Logo.png" width="50%">
+    </a>
+
+    <br>
+    <a href="http://formal.iti.kit.edu/">Group for Application-oriented Verification</a>
+    at the<br>
+    <a href="http://www.kit.edu/english/" style="" title="KIT Logo - Link to KIT start page">
+      <img src="https://formal.iti.kit.edu/img/intern/kit_logo.png" width="50%" alt="KIT Logo - Link to KIT start page">
+    </a>
+  </div>
+
+
+
+</header>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="iec61131lang">
+<h1>iec61131lang<a class="headerlink" href="#iec61131lang" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://www.codacy.com/app/wadoon/iec61131lang?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=VerifAPS/iec61131lang&amp;utm_campaign=badger"><img alt="Codacy Badge" src="https://api.codacy.com/project/badge/Grade/7d1913c80a714d76a31ce0b225f197e5" /></a> <a class="reference external" href="https://travis-ci.org/VerifAPS/iec61131lang"><img alt="Build Status" src="https://travis-ci.org/VerifAPS/iec61131lang.svg?branch=master" /></a> <a class="reference external" href="https://circleci.com/gh/VerifAPS/iec61131lang"><img alt="CircleCI" src="https://circleci.com/gh/VerifAPS/iec61131lang.svg?style=svg" /></a></p>
+<p>Parser and AST for StructuredText, Sequential Function Charts and
+Function Blocks.</p>
+<ul class="simple">
+<li>License: GPL v3</li>
+<li>Author<ul>
+<li>Alexander Weigl <a class="reference external" href="mailto:weigl&#37;&#52;&#48;kit&#46;edu">weigl<span>&#64;</span>kit<span>&#46;</span>edu</a></li>
+<li>Contributions from &#64;matheus23</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="from-the-repository">
+<h2>From the repository<a class="headerlink" href="#from-the-repository" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">project</span><span class="o">&gt;</span>
+    <span class="o">...</span>
+    <span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">edu</span><span class="o">.</span><span class="n">kit</span><span class="o">.</span><span class="n">iti</span><span class="o">.</span><span class="n">formal</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">iec61131lang</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">0.1</span><span class="o">.</span><span class="mi">9</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+    <span class="o">...</span>
+    <span class="o">&lt;</span><span class="n">repositories</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">repository</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nb">id</span><span class="o">&gt;</span><span class="n">formal</span><span class="o">-</span><span class="n">iti</span><span class="o">-</span><span class="n">kit</span><span class="o">&lt;/</span><span class="nb">id</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">url</span><span class="o">&gt;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">formal</span><span class="o">.</span><span class="n">iti</span><span class="o">.</span><span class="n">kit</span><span class="o">.</span><span class="n">edu</span><span class="o">/&lt;/</span><span class="n">url</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">repository</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">repositories</span><span class="o">&gt;</span>
+    <span class="o">...</span>
+<span class="o">&lt;/</span><span class="n">project</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="from-source">
+<h2>from source<a class="headerlink" href="#from-source" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone  https://github.com/VerifAPS/iec61131lang.git
+$ mvn install
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>0.1.14-beta</li>
+<li>deep copy of ast by <code class="docutils literal notranslate"><span class="pre">Object.clone()</span></code></li>
+<li><em>beta</em> integration of oo features</li>
+<li><code class="docutils literal notranslate"><span class="pre">Position</span></code> became an top-level class</li>
+<li>0.1.13</li>
+<li>minor bug fixes</li>
+<li>0.1.12</li>
+<li>Fix NPE in AstVisitor</li>
+<li>0.1.11</li>
+<li>Bug fix in <code class="docutils literal notranslate"><span class="pre">IEC61131Facade.file()</span></code></li>
+</ul>
+</div>
+<div class="section" id="todo">
+<h1>TODO<a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>[ ] Visitor for adding making explicit of the default initialization
+values</li>
+<li>[ ] explicit type promotion</li>
+<li>[ ] Unit Tests, especially for wrong expressions and statements</li>
+<li>[ ] Error Messages</li>
+<li>[ ] Documentation</li>
+</ul>
+</div>
+<div class="section" id="language-features">
+<h1>Language Features<a class="headerlink" href="#language-features" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>[ ] Structured Text<ul>
+<li>[x] Constrol Structures<ul>
+<li>[x] if-elseif-else</li>
+<li>[x] case<ul>
+<li>[x] ordinals</li>
+<li>[x] enumerations</li>
+<li>[x] range</li>
+</ul>
+</li>
+<li>[x] for</li>
+<li>[x] while</li>
+<li>[x] repeat-until</li>
+</ul>
+</li>
+<li>[x] POUs<ul>
+<li>[x] Function</li>
+<li>[x] Function Block</li>
+<li>[x] Program</li>
+</ul>
+</li>
+<li>[ ] User-defined Datatypes<ul>
+<li>[x] Enums</li>
+<li>[x] Ranges</li>
+<li>[x] Arrays</li>
+<li>[x] Structs/Records</li>
+</ul>
+</li>
+<li>[?] Pointers (need to be tested)</li>
+<li>[ ] Object Oriented Function Blocks<ul>
+<li>[ ] Interfaces</li>
+<li>[ ] Extends Clause</li>
+<li>[x] implemented as datastructures</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[ ] Sequential Function Chart<ul>
+<li>[x] Steps with Actions</li>
+<li>[x] Transitions<ul>
+<li>[x] fork/join (divergence/convergence)</li>
+<li>[x] split/merge (simultanousely divergence/convergence)</li>
+<li>[x] Guards in Structured Text</li>
+</ul>
+</li>
+<li>[ ] Timed (not planned)</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="sequential-function-chart-syntax">
+<h1>Sequential Function Chart Syntax<a class="headerlink" href="#sequential-function-chart-syntax" title="Permalink to this headline">¶</a></h1>
+<p>This is not a standard language.</p>
+<div class="section" id="example">
+<h2>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SFC</span> <span class="n">example</span>
+
+    <span class="n">VAR_OUTPUT</span>
+        <span class="n">o</span> <span class="p">:</span> <span class="nb">bool</span><span class="p">;</span>
+    <span class="n">END_VAR</span>
+
+    <span class="n">STEP</span> <span class="n">A</span>
+        <span class="n">on</span> <span class="n">active</span> <span class="n">action</span>
+            <span class="n">o</span> <span class="p">:</span><span class="o">=</span> <span class="n">true</span><span class="p">;</span>
+        <span class="n">end_action</span>
+    <span class="n">END_STEP</span>
+
+    <span class="n">STEP</span> <span class="n">B</span>
+       <span class="n">on</span> <span class="n">active</span> <span class="n">action</span>
+            <span class="n">o</span> <span class="p">:</span><span class="o">=</span> <span class="n">false</span><span class="p">;</span>
+       <span class="n">end_action</span>
+    <span class="n">END_STEP</span>
+
+    <span class="n">GOTO</span> <span class="n">true</span> <span class="p">::</span> <span class="n">A</span> <span class="o">-&gt;</span> <span class="n">B</span>
+    <span class="n">GOTO</span> <span class="n">true</span> <span class="p">::</span> <span class="n">B</span> <span class="o">-&gt;</span> <span class="n">A</span>
+<span class="n">END_SFC</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ebnf">
+<h2>EBNF<a class="headerlink" href="#ebnf" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">SFC</span><span class="o">&gt;</span>  <span class="p">:</span><span class="o">==</span>  <span class="n">SFC</span> <span class="o">&lt;</span><span class="n">identifier</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">elements</span><span class="o">&gt;*</span>
+            <span class="n">END_SFC</span>
+
+<span class="o">&lt;</span><span class="n">entry</span><span class="o">&gt;</span>   <span class="p">:</span><span class="o">==</span> <span class="o">&lt;</span><span class="n">var_decl</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">step_decl</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">transition</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">step_decl</span><span class="o">&gt;</span> <span class="p">:</span><span class="o">==</span> <span class="n">STEP</span> <span class="o">&lt;</span><span class="n">identifier</span><span class="o">&gt;</span>
+                  <span class="n">on</span> <span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">action</span> <span class="o">&lt;</span><span class="n">statement</span><span class="o">&gt;*</span> <span class="n">end_action</span>
+                             <span class="o">|</span> <span class="o">&lt;</span><span class="n">function</span><span class="o">-</span><span class="n">identifier</span><span class="o">&gt;</span> <span class="p">)</span>
+                <span class="n">END_STEP</span>
+<span class="o">&lt;</span><span class="n">transition</span><span class="o">&gt;</span> <span class="p">:</span><span class="o">==</span> <span class="n">GOTO</span> <span class="o">&lt;</span><span class="n">guard</span><span class="o">&gt;</span> <span class="p">::</span> <span class="o">&lt;</span><span class="n">identifier</span><span class="o">&gt;*</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">identifier</span><span class="o">&gt;*</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;event&gt;</span></code> can be either <code class="docutils literal notranslate"><span class="pre">active</span></code>, <code class="docutils literal notranslate"><span class="pre">exit</span></code> or <code class="docutils literal notranslate"><span class="pre">entry</span></code>.
+<code class="docutils literal notranslate"><span class="pre">&lt;statement&gt;</span></code> refers to valid Structured Text statements.
+<code class="docutils literal notranslate"><span class="pre">&lt;var_decl&gt;</span></code> responses to classical variable declearation in
+IEC61131-3.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Alexander Weigl.
+      
+      |
+      <a href="../_sources/library/iec61131lang.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

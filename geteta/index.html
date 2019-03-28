@@ -1,0 +1,467 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>geteta — Generalized Test Tables &#8212; VerifAPS 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="STVS – A GUI for Geteta" href="../stvs/index.html" />
+    <link rel="prev" title="aps-rvt – Regression Verification for APS" href="../rvt/index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+    <link rel="canonical" href="http://formal.iti.kit.edu/verifapsgeteta/index.html"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/verifaps-logo.svg" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Tools and Library for the Verification of Automated Production System</p>
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../library/index.html">Library Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rvt/index.html">aps-rvt – Regression Verification for APS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">geteta — Generalized Test Tables  </a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#download">Download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started-1">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#command-line-arguments">Command Line Arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#xml-format-of-generalized-test-tables">XML-Format of Generalized Test tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-a-test-table">What is a test table?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#semantics">Semantics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#input-format">Input format</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../stvs/index.html">STVS – A GUI for Geteta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demofinal/index.html">Demonstration from the Final Workshop</a></li>
+</ul>
+
+
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">geteta — Generalized Test Tables  </a><ul>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li><a class="reference internal" href="#download">Download</a><ul>
+<li><a class="reference internal" href="#from-source">From Source</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#getting-started-1">Getting started</a></li>
+<li><a class="reference internal" href="#command-line-arguments">Command Line Arguments</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#xml-format-of-generalized-test-tables">XML-Format of Generalized Test tables</a><ul>
+<li><a class="reference internal" href="#what-is-a-test-table">What is a test table?</a></li>
+<li><a class="reference internal" href="#semantics">Semantics</a></li>
+<li><a class="reference internal" href="#input-format">Input format</a><ul>
+<li><a class="reference internal" href="#variables"><code class="docutils literal notranslate"><span class="pre">&lt;variables&gt;</span></code></a><ul>
+<li><a class="reference internal" href="#variable"><code class="docutils literal notranslate"><span class="pre">&lt;variable&gt;</span></code></a></li>
+<li><a class="reference internal" href="#constraint"><code class="docutils literal notranslate"><span class="pre">&lt;constraint&gt;</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#steps"><code class="docutils literal notranslate"><span class="pre">&lt;steps&gt;</span></code></a></li>
+<li><a class="reference internal" href="#region-and-step"><code class="docutils literal notranslate"><span class="pre">&lt;region&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;step&gt;</span></code></a></li>
+<li><a class="reference internal" href="#cell-expression-cell">Cell Expression (<code class="docutils literal notranslate"><span class="pre">&lt;cell&gt;</span></code>)</a><ul>
+<li><a class="reference internal" href="#operators-with-precedence">Operators with Precedence</a></li>
+<li><a class="reference internal" href="#options"><code class="docutils literal notranslate"><span class="pre">&lt;options&gt;</span></code></a><ul>
+<li><a class="reference internal" href="#program-mode">Program mode</a></li>
+<li><a class="reference internal" href="#cycles-through-the-steps">Cycles through the steps</a></li>
+<li><a class="reference internal" href="#data-types">Data types</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#functions"><code class="docutils literal notranslate"><span class="pre">&lt;functions&gt;</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<header style="text-align:center">
+  <hr>
+
+  <div>
+    Funded by IMPROVE APS project:<br>
+    <a href="http://formal.iti.kit.edu/projects/improve-aps/">
+      <img src="https://formal.iti.kit.edu/projects/improve-aps/Logo.png" width="50%">
+    </a>
+
+    <br>
+    <a href="http://formal.iti.kit.edu/">Group for Application-oriented Verification</a>
+    at the<br>
+    <a href="http://www.kit.edu/english/" style="" title="KIT Logo - Link to KIT start page">
+      <img src="https://formal.iti.kit.edu/img/intern/kit_logo.png" width="50%" alt="KIT Logo - Link to KIT start page">
+    </a>
+  </div>
+
+
+
+</header>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="geteta-generalized-test-tables-codacy-badge-circleci">
+<h1>geteta — Generalized Test Tables <a class="reference external" href="https://www.codacy.com/app/wadoon/geteta?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=VerifAPS/geteta&amp;utm_campaign=badger"><img alt="Codacy Badge" src="https://api.codacy.com/project/badge/Grade/655e1ba61c2040eb8bccdb8f8a3799d1" /></a> <a class="reference external" href="https://circleci.com/gh/VerifAPS/geteta"><img alt="CircleCI" src="https://circleci.com/gh/VerifAPS/geteta.svg?style=svg" /></a><a class="headerlink" href="#geteta-generalized-test-tables-codacy-badge-circleci" title="Permalink to this headline">¶</a></h1>
+<p>Generalized Test Tables ensures safety in automation software.</p>
+<div class="figure">
+<img alt="../_images/geteta-logo.svg" src="../_images/geteta-logo.svg" /></div>
+<ul>
+<li><p class="first">Authors:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Alexander Weigl <a class="reference external" href="mailto:weigl&#37;&#52;&#48;kit&#46;edu">weigl<span>&#64;</span>kit<span>&#46;</span>edu</a></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">License: GPL v3</p>
+</li>
+</ul>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="download">
+<h2>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h2>
+<p>These are jar files include all dependencies:</p>
+<ul>
+<li><p class="first">0.5.0-SNAPSHOT: <strong>not released</strong></p>
+<ul class="simple">
+<li>new automata model</li>
+<li>different verification techniques (IC3, BMC, LTL)</li>
+<li><strong>latest useable version for `stvs &lt;../stvs/index.md&gt;`__</strong></li>
+</ul>
+</li>
+<li><p class="first">0.4.4: <a class="reference external" href="downloads/geteta-0.4.4-exe.jar">geteta-0.4.4-exe.jar</a></p>
+<ul>
+<li><p class="first">Fix a bug in the clocks.</p>
+</li></li>
+</ul>
+</li>
+<li><p class="first">0.4.3: <a class="reference external" href="downloads/geteta-0.4.3-exe.jar">geteta-0.4.3-exe.jar</a></p>
+<ul class="simple">
+<li>Change clock initial value to 1 as off-by-one error</li>
+</ul>
+</li>
+<li><p class="first">0.4.2: <a class="reference external" href="downloads/geteta-0.4.2-exe.jar">geteta-0.4.2-exe.jar</a></p>
+<ul class="simple">
+<li>Kills nuXmv, if geteta is killed</li>
+<li>depends on new version of <code class="docutils literal notranslate"><span class="pre">iec61131lang</span></code></li>
+</ul>
+</li>
+<li><p class="first">0.4.1: <a class="reference external" href="downloads/geteta-0.4.1-exe.jar">geteta-0.4.1-exe.jar</a></p>
+<ul>
+<li><p class="first">bug fixes: missing constraint on free variables are treated as
+don’t cares</p>
+</li></li>
+</ul>
+</li>
+<li><p class="first">If a free variable is an enum, every allowed enum literal is allowed
+(super-enum to rule them all).</p>
+</li><ul class="simple">
+<li>0.4.0: <a class="reference external" href="downloads/geteta-0.4.0-exe.jar">geteta-0.4.0-exe.jar</a></li>
+</ul>
+</li>
+<li><p class="first">Counter examples in the semantic of traces in the test table</p>
+<ul class="simple">
+<li>0.3.0: <a class="reference external" href="downloads/geteta-0.3.0-exe.jar">geteta-0.3.0-exe.jar</a></li>
+</ul>
+</li>
+<li><p class="first">enum support tested and fixed</p>
+<ul class="simple">
+<li>0.2.2-beta:
+<a class="reference external" href="downloads/geteta-0.2.2-beta.jar">geteta-0.2.2-beta.jar</a></li>
+</ul>
+</li>
+<li><p class="first">better nuxmv output parser</p>
+<ul class="simple">
+<li>0.2.1-beta:
+<a class="reference external" href="downloads/geteta-0.2.1-beta.jar">geteta-0.2.1-beta.jar</a></li>
+</ul>
+</li>
+<li><p class="first">Internal changes</p>
+<ul class="simple">
+<li>0.2.0: <a class="reference external" href="downloads/geteta-0.2.0.jar">geteta-0.2.0.jar</a></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="from-source">
+<h3>From Source<a class="headerlink" href="#from-source" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/VerifAPS/geteta.git
+$ mvn package
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="getting-started-1">
+<span id="id1"></span><h2>Getting started<a class="headerlink" href="#getting-started-1" title="Permalink to this headline">¶</a></h2>
+<p>Ensure, that you have installed <a class="reference external" href="http://nuxmv.fbk.eu">nuXmv</a>. You
+need to set the <code class="docutils literal notranslate"><span class="pre">NUXMV</span></code> environment variable to the nuXmv executable.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">NUXMV</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">weigl</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">nuXmv</span><span class="o">-</span><span class="mf">1.1</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="n">Linux</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">nuXmv</span>
+</pre></div>
+</div>
+<p>After this, you can call geteta with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>java -jar geteta-${project.version}.jar -c program.st -t testtable.xml [-x]
+</pre></div>
+</div>
+</div>
+<div class="section" id="command-line-arguments">
+<h2>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">-x</span></code> geteta writes the output in an XML format.</li>
+<li><code class="docutils literal notranslate"><span class="pre">-m</span> <span class="pre">&lt;mode&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">-t</span> <span class="pre">&lt;table.xml&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">&lt;code.st&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">-v</span> <span class="pre">(IC3|INVAR|LTL|BMC)</span></code></li>
+</ul>
+</div>
+</div>
+<div class="section" id="xml-format-of-generalized-test-tables">
+<h1>XML-Format of Generalized Test tables<a class="headerlink" href="#xml-format-of-generalized-test-tables" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-a-test-table">
+<h2>What is a test table?<a class="headerlink" href="#what-is-a-test-table" title="Permalink to this headline">¶</a></h2>
+<p>A test table describe a behaviour of a reactive system by ensuring
+allowed input and output values for specific time frames.</p>
+</div>
+<div class="section" id="semantics">
+<h2>Semantics<a class="headerlink" href="#semantics" title="Permalink to this headline">¶</a></h2>
+<p>A system is conform to a test table if and only if the system response
+with the corresponding (after the test table) output sequence given a
+valid sequence of input values.</p>
+</div>
+<div class="section" id="input-format">
+<h2>Input format<a class="headerlink" href="#input-format" title="Permalink to this headline">¶</a></h2>
+<p>The test tables are serialized into XML, following the scheme of
+<code class="docutils literal notranslate"><span class="pre">`exteta-1.0.xsd</span></code> &lt;&gt;`__. The XML contains three parts under the root
+entry.</p>
+<div class="section" id="variables">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;variables&gt;</span></code><a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+<p>These tag contains the two types of variables: i/o and constraint.</p>
+<div class="section" id="variable">
+<h4><code class="docutils literal notranslate"><span class="pre">&lt;variable&gt;</span></code><a class="headerlink" href="#variable" title="Permalink to this headline">¶</a></h4>
+<p><strong>Attributes:</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>identifier</td>
+<td>variable identifier</td>
+</tr>
+<tr class="row-odd"><td>io</td>
+<td><code class="docutils literal notranslate"><span class="pre">input</span></code> or <code class="docutils literal notranslate"><span class="pre">output</span></code></td>
+</tr>
+<tr class="row-even"><td>data-type</td>
+<td>IEC61131-3 builtin datatype. Currently
+supported: AnyInt and AnyBit</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>I/O variables talk about the the input and output variables of the
+given program.</li>
+</ul>
+</div>
+<div class="section" id="constraint">
+<h4><code class="docutils literal notranslate"><span class="pre">&lt;constraint&gt;</span></code><a class="headerlink" href="#constraint" title="Permalink to this headline">¶</a></h4>
+<p>Constraint variables (<em>specification variable</em>) are not visible to the
+program.</p>
+<p><strong>Attributes:</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>identifier</td>
+<td>variable identifier</td>
+</tr>
+<tr class="row-odd"><td>constraint</td>
+<td>a valid cell expression</td>
+</tr>
+<tr class="row-even"><td>data-type</td>
+<td>IEC61131-3 builtin datatype. Currently
+supported: AnyInt and AnyBit</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="steps">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;steps&gt;</span></code><a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="region-and-step">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;region&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;step&gt;</span></code><a class="headerlink" href="#region-and-step" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;steps&gt;</span></code> tag contains the row (<code class="docutils literal notranslate"><span class="pre">&lt;step&gt;</span></code>) of the test tables.
+Each row the value of the cells (cell expressions) in the order of the
+defined i/o variables.</p>
+<p>You repeat a bunch of steps, by wrapping them into a region block.</p>
+<p>A region and step tag has the <code class="docutils literal notranslate"><span class="pre">duration</span></code> attribute, which defines how
+often the step is applied. The <code class="docutils literal notranslate"><span class="pre">duration</span></code> is an interval <code class="docutils literal notranslate"><span class="pre">[m,n]</span></code>
+with constant values for <code class="docutils literal notranslate"><span class="pre">m,n</span></code>.</p>
+</div>
+<div class="section" id="cell-expression-cell">
+<h3>Cell Expression (<code class="docutils literal notranslate"><span class="pre">&lt;cell&gt;</span></code>)<a class="headerlink" href="#cell-expression-cell" title="Permalink to this headline">¶</a></h3>
+<p>Formally, a cell expression is generated by the <a href="#id2"><span class="problematic" id="id3">`grammar &lt;&gt;`__</span></a>.
+Informally, a cell expression is a boolean expression over the following
+operators</p>
+<ul class="simple">
+<li>arithmetic <code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-,</span> <span class="pre">*,</span> <span class="pre">/</span></code></li>
+<li>logical <code class="docutils literal notranslate"><span class="pre">and,</span> <span class="pre">or,</span> <span class="pre">xor</span></code>.</li>
+</ul>
+<p>The syntax and semantic, e.g.&nbsp;the operator precedence is tight on the
+definition of Structured Text and SMV (nuXmv). For example, <code class="docutils literal notranslate"><span class="pre">OR</span></code> and
+<code class="docutils literal notranslate"><span class="pre">|</span></code> is allowed for logical or.</p>
+<p>Additionally, we introduce abbreviations.</p>
+<ul class="simple">
+<li>Constants</li>
+</ul>
+<p>A simple constant means the equivalence with this value.</p>
+<p><code class="docutils literal notranslate"><span class="pre">5</span></code> means <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">=</span> <span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> is <code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">X</span></code>.</p>
+<ul class="simple">
+<li>Single-sided comparison</li>
+</ul>
+<p>A construct with a relational operator, <code class="docutils literal notranslate"><span class="pre">&lt;,&lt;=,&lt;&gt;,=,</span> <span class="pre">&gt;=,</span> <span class="pre">&gt;</span></code>, compares
+the column variable <code class="docutils literal notranslate"><span class="pre">X</span></code> with the given expression.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">&lt;1</span></code> means <code class="docutils literal notranslate"><span class="pre">X&lt;1</span></code> resp. <code class="docutils literal notranslate"><span class="pre">&gt;=a+2</span></code> expands to <code class="docutils literal notranslate"><span class="pre">X&gt;=a+2</span></code>.</p>
+<ul class="simple">
+<li>Interval</li>
+</ul>
+<p>You can specify an interval <code class="docutils literal notranslate"><span class="pre">[m,n]</span></code> to enforce a lower and upper bound
+for <code class="docutils literal notranslate"><span class="pre">X</span></code>: <code class="docutils literal notranslate"><span class="pre">m&lt;=X</span> <span class="pre">&amp;</span> <span class="pre">X&gt;=n</span></code>.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">[x+2,</span> <span class="pre">x+4]</span></code> means <code class="docutils literal notranslate"><span class="pre">(x+2)</span> <span class="pre">&lt;=</span> <span class="pre">X</span> <span class="pre">&lt;=</span> <span class="pre">(x+4)</span></code>.</p>
+<ul class="simple">
+<li>Don’t-Care</li>
+</ul>
+<p>If you don’t want to force a value, you can use “don’t-care” <code class="docutils literal notranslate"><span class="pre">-</span></code>.</p>
+<div class="section" id="operators-with-precedence">
+<h4>Operators with Precedence<a class="headerlink" href="#operators-with-precedence" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple" start="0">
+<li>constants and variable names</li>
+<li>parens <code class="docutils literal notranslate"><span class="pre">()</span></code> and unary operators <code class="docutils literal notranslate"><span class="pre">!</span> <span class="pre">NOT</span> <span class="pre">-</span></code></li>
+<li>point operators <code class="docutils literal notranslate"><span class="pre">MOD</span> <span class="pre">%</span> <span class="pre">/</span> <span class="pre">*</span></code></li>
+<li>Substraction and Addition <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">-</span></code></li>
+<li>Comparision <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">&lt;=</span> <span class="pre">&gt;=</span> <span class="pre">&gt;</span></code></li>
+<li>equality</li>
+<li>antivalence</li>
+<li>logical and <code class="docutils literal notranslate"><span class="pre">&amp;</span> <span class="pre">AND</span></code></li>
+<li>logical or <code class="docutils literal notranslate"><span class="pre">|</span> <span class="pre">OR</span></code></li>
+<li>logical xor <code class="docutils literal notranslate"><span class="pre">xor</span> <span class="pre">XOR</span></code></li>
+</ol>
+</div>
+<div class="section" id="options">
+<h4><code class="docutils literal notranslate"><span class="pre">&lt;options&gt;</span></code><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h4>
+<p>Options are key-value pairs of the kind <code class="docutils literal notranslate"><span class="pre">&lt;option</span> <span class="pre">key=&quot;&quot;</span> <span class="pre">value=&quot;&quot;/&gt;</span></code>.
+They give additional information for the processing of the given table.</p>
+<p>Currently allowed options:</p>
+<div class="section" id="program-mode">
+<h5>Program mode<a class="headerlink" href="#program-mode" title="Permalink to this headline">¶</a></h5>
+<ul class="simple">
+<li>Key: <code class="docutils literal notranslate"><span class="pre">mode</span></code></li>
+<li>Values: <code class="docutils literal notranslate"><span class="pre">CONFORMANCE</span></code> or <code class="docutils literal notranslate"><span class="pre">CONCRETE_TABLE</span></code> or
+<code class="docutils literal notranslate"><span class="pre">INPUT_SEQUENCE_EXISTS</span></code> | Controls</li>
+</ul>
+<p>The mode of test tables has following effect:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">CONFORMANCE</span></code> - <strong>default</strong> Checks the system conformity against
+the test table. Returns a counter example, iff the system is not
+compilant against the above semantic.</li>
+<li><code class="docutils literal notranslate"><span class="pre">CONCRETE_TABLE</span></code> Returns a counter example, that represents a
+concrete run through the test table.</li>
+<li><code class="docutils literal notranslate"><span class="pre">INPUT_SEQUENCE_EXISTS</span></code> The above semantics has one problem, if no
+possible <em>input sequence extension</em> exists. This mode checks if there
+exists always an input extension.</li>
+</ul>
+</div>
+<div class="section" id="cycles-through-the-steps">
+<h5>Cycles through the steps<a class="headerlink" href="#cycles-through-the-steps" title="Permalink to this headline">¶</a></h5>
+<p>In dependence of <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">=</span> <span class="pre">CONCRETE_TABLE</span></code> you can give the wanted cycle
+count for each step.</p>
+<ul class="simple">
+<li>Keys: <code class="docutils literal notranslate"><span class="pre">cycles.&lt;id&gt;</span></code></li>
+<li>Value: <code class="docutils literal notranslate"><span class="pre">int</span></code></li>
+</ul>
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;id&gt;</span></code> is the number of the region/step (starting with zero, in
+order of appearance).</p>
+</div>
+<div class="section" id="data-types">
+<h5>Data types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h5>
+<p>You can select the bit width of the ST data types. <strong>currently not
+implemented</strong></p>
+</div>
+</div>
+<div class="section" id="functions">
+<h4><code class="docutils literal notranslate"><span class="pre">&lt;functions&gt;</span></code><a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h4>
+<p>Between this tag you can define arbitrary function as Structured Text code.
+These function are usable within the cell expressions as regular function calls.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Alexander Weigl.
+      
+      |
+      <a href="../_sources/geteta/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

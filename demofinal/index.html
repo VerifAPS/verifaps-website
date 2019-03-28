@@ -1,0 +1,270 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Demonstration from the Final Workshop &#8212; VerifAPS 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="STVS – A GUI for Geteta" href="../stvs/index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+    <link rel="canonical" href="http://formal.iti.kit.edu/verifapsdemofinal/index.html"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/verifaps-logo.svg" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Tools and Library for the Verification of Automated Production System</p>
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../library/index.html">Library Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rvt/index.html">aps-rvt – Regression Verification for APS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geteta/index.html">geteta — Generalized Test Tables  </a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geteta/index.html#xml-format-of-generalized-test-tables">XML-Format of Generalized Test tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stvs/index.html">STVS – A GUI for Geteta</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Demonstration from the Final Workshop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#regression-verification">Regression Verification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#st-verification-studio">ST Verification Studio</a></li>
+</ul>
+</li>
+</ul>
+
+
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Demonstration from the Final Workshop</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#regression-verification">Regression Verification</a></li>
+<li><a class="reference internal" href="#st-verification-studio">ST Verification Studio</a></li>
+</ul>
+</li>
+</ul>
+
+<header style="text-align:center">
+  <hr>
+
+  <div>
+    Funded by IMPROVE APS project:<br>
+    <a href="http://formal.iti.kit.edu/projects/improve-aps/">
+      <img src="https://formal.iti.kit.edu/projects/improve-aps/Logo.png" width="50%">
+    </a>
+
+    <br>
+    <a href="http://formal.iti.kit.edu/">Group for Application-oriented Verification</a>
+    at the<br>
+    <a href="http://www.kit.edu/english/" style="" title="KIT Logo - Link to KIT start page">
+      <img src="https://formal.iti.kit.edu/img/intern/kit_logo.png" width="50%" alt="KIT Logo - Link to KIT start page">
+    </a>
+  </div>
+
+
+
+</header>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="demonstration-from-the-final-workshop">
+<h1>Demonstration from the Final Workshop<a class="headerlink" href="#demonstration-from-the-final-workshop" title="Permalink to this headline">¶</a></h1>
+<p>To follow the demonstration, you should download the following archive,
+including a version of <a class="reference external" href="../stvs/index.md">stvs</a>,
+<a class="reference external" href="../geteta/index.md">geteta</a>, <a class="reference external" href="../rvt/index.md">rvt</a>. Also
+consider to download the model checker <a class="reference external" href="http://nuxmv.fkb.eu">nuXmv</a>,
+for running the verification.</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="first_slide.svg"><img alt="image0" src="../_images/first_slide.svg" /></a></p>
+<p>Welcome to the demonstration of two tools implementing two approaches
+developed in IMPROVE APS. They reflect the two side of formal analysis
+of evolution of APS software: There are behavioural aspects that should
+be retained. We use ReVe4PLC to show that this is the case. And there
+are new behavioural apsects which need to be specified and verified. We
+use our ST verification studio to do so.</p>
+</div>
+<div class="section" id="regression-verification">
+<h2>Regression Verification<a class="headerlink" href="#regression-verification" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="second_slide.svg"><img alt="image1" src="../_images/second_slide.svg" /></a></p>
+<p>Let’s start with an evolution scenario of the PPU (12 to 13 for the
+insiders). Originally, the position of the crane was reported using 3
+switches at the respective positions of the crane: magazine, conveyer,
+stamp. Assume that this was too imprecise. The designers decided to
+replace the sensors by a single angular sensor (a potentiometer).</p>
+<p>Of course the software needed to be adapted for this hardware change as
+the type of sensor values changed. (3 booleans vs.&nbsp;one integer).</p>
+<p>When running the plant, the two plants should not be distinguishable. We
+could run some tests to that this is so in these cases.</p>
+<p>However, we want to cover all possible cases and therefore undergo a
+static analysis of the code running the two systems and compare it. They
+cannot be equivalent as they have different input signals.</p>
+<p>Indeed, a relation on the inputs needs to be given which defines which
+input values correspond for the two code revisions. Position C for
+instance corresponds to the angle range between 87 and 93 degrees.
+Likewise the others. Assuming this relation on the inputs, the code
+revisions must produce the same output. That’s our verification goal.</p>
+<p>Now let us look at the code to be verified.</p>
+<blockquote>
+<div>You can the source code here: <a class="reference external" href="Crane12.st">Scenario 12: Crane</a>,
+<a class="reference external" href="Crane13.st">Scenario 13: Crane</a> and the <a class="reference external" href="library.st">library
+function</a>.</div></blockquote>
+<p>This is the crane model of the PPU implementation: an SFC with 63 states.
+Although not terribly complex, this is already a size at which it is easy to
+miss a mistake.</p>
+<p>The first step of our tool chain is to normalise this code to imperative code in
+ST (500 loc).</p>
+<p>The same can be done with the second revision of the code which is similar –
+with some local changes.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+
+dist/bin/rvt                          <span class="se">\</span>
+    -L library.st                     <span class="se">\</span>
+    --old Crane12.st --old-name Crane <span class="se">\</span>
+    --new Crane13.st --new-name Crane <span class="se">\</span>
+    --miter UNTIL --until-miter-cond inputconstraint.smv <span class="se">\</span>
+    --do-not-verify
+
+/usr/bin/time <span class="se">\</span>
+    /home/weigl/share/nuXmv-1.1.1-Linux/bin/nuXmv -source commands.xmv <span class="se">\</span>
+    main.stable.smv
+</pre></div>
+</div>
+<p>Our regression verification tool is a command line tool. This is the command to
+invoke it:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> demo/rvt-aps <span class="o">&amp;&amp;</span> ./run.sh
+</pre></div>
+</div>
+<p>We specify the two programs (rev. 12 and 13) and the relation for the
+inputs to produce the input for the model checker.With that we invoke
+the model checker (can be done in one call).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">***</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">nuXmv</span> <span class="mf">1.1</span><span class="o">.</span><span class="mi">1</span> <span class="p">(</span><span class="n">compiled</span> <span class="n">on</span> <span class="n">Wed</span> <span class="n">Jun</span>  <span class="mi">1</span> <span class="mi">10</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">42</span> <span class="mi">2016</span><span class="p">)</span>
+<span class="o">***</span> <span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">2014</span><span class="o">-</span><span class="mi">2016</span><span class="p">,</span> <span class="n">Fondazione</span> <span class="n">Bruno</span> <span class="n">Kessler</span>
+<span class="p">[</span><span class="o">..</span><span class="p">]</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">bits</span><span class="p">:</span> <span class="mi">333</span> <span class="p">(</span><span class="mi">0</span> <span class="n">frozen</span><span class="p">,</span> <span class="mi">33</span> <span class="nb">input</span><span class="p">,</span> <span class="mi">300</span> <span class="n">state</span><span class="p">)</span>
+<span class="p">[</span><span class="o">..</span><span class="p">]</span>
+<span class="o">--</span> <span class="n">no</span> <span class="n">proof</span> <span class="ow">or</span> <span class="n">counterexample</span> <span class="n">found</span> <span class="k">with</span> <span class="n">bound</span> <span class="mi">40</span>
+<span class="o">--</span> <span class="n">invariant</span> <span class="p">(</span><span class="n">__miter__</span><span class="o">.</span><span class="n">premise</span> <span class="o">-&gt;</span> <span class="p">((((((</span><span class="n">__miter__</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">eq_MagazinVacuumOff_MagazinVacuumOff</span> <span class="o">&amp;</span> <span class="n">__miter__</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">eq_CraneTurnClockwise_CraneTurnClockwise</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">__miter__</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">eq_CraneLower_CraneLower</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">__miter__</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">eq_CraneTurnCounterclockwise_CraneTurnCounterclockwise</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">__miter__</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">eq_StartCommandCrane_StartCommandCrane</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">__miter__</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">eq_MagazinVacuumOn_MagazinVacuumOn</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">__miter__</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">eq_AnalogCranePressure_AnalogCranePressure</span><span class="p">))</span>  <span class="ow">is</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>We use nuxmv, a state-of-the-art model checker, which is particularly
+good at inferring invariants.</p>
+<p>This will take a while.</p>
+<p>We have verified the evolution scenarios of the original PPU using our
+approach – with runtimes betwen a few minutes and several hours.</p>
+<p>We have since extended our approach with a modularisation concept which
+allows us to consider modules separately (like here the crane) which
+shortens the verification time considerably.</p>
+<p>In the reuslt, we can see that the invariant – which encodes the wanted
+equivalence – is true. Hooray, the two programs are equivalent as
+specified.</p>
+<p>This is how we deal with behaviour which is to remain unchanged.</p>
+</div>
+<div class="section" id="st-verification-studio">
+<h2>ST Verification Studio<a class="headerlink" href="#st-verification-studio" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ java -jar stverificationstudio-all-1.4.0-beta.jar
+</pre></div>
+</div>
+<blockquote>
+<div>Note: On first start of STVS, you need to configure the paths to
+nuXmv and geteta (under File, Preferences or Ctrl-,).</div></blockquote>
+<blockquote>
+<div>Start with table No Warning</div></blockquote>
+<p>It’s different when new behaviour is to be introduced. Here we need an
+understandable specifciation language, and a verification system with
+good user feedback.</p>
+<p>As mentioned earlier in the presentation, we have invented generalised
+test tables for precisely that reason.</p>
+<p>Our implementation of a user-friendly system for such tables is the
+Verificaiton Studio. On the left you can see the code that we are
+operating on. On the right hand side, you can edit the table and you get
+feedback on the verification effort.</p>
+<p>In this demo, we will not look at a plant, but at a basic component as
+often used in systems: A component which limits a value to a range given
+by a minimum and a maximum value. Since gtts are good for specification,
+I would like to explain their usage by means of such tables.</p>
+<p>Test tables describe component runs over a number of clock cycles. They
+do not describe individual runs, but families of similar runs, which are
+parametrised.</p>
+<p>Here we see a table, I is the input, an integer, and Q is the output.
+This table describes a scenario in which the component is trained to its
+minimum/maximum values p and q, and then run within these bounds.</p>
+<p>At first, the system runs for a while, before initialisation, the output
+is expected to be 0. Then we switch into learning mode, training the
+values p and q and some values in between.</p>
+<p>Then switching back to normal mode, if only values within [p,q] arrive
+as inputs, they are replicated as outputs. No warning.</p>
+<p>We can use this table as runtime monitor, to generate test cases or to
+do formal verification. We can do this, pressing the button up there.</p>
+<blockquote>
+<div>Press VERIFY</div></blockquote>
+<p>The verification succeeds: Any instance of the generalised table is
+satisfied by the implementation.</p>
+<blockquote>
+<div>Show second table: Warning</div></blockquote>
+<p>Another table for a different use case: Here the range [o,q] is learned,
+but the input value violates this: A warning is expected.</p>
+<p>However, verification reveals that the implementation does not satisfy
+this case. We get shown a counterexample trace violating the table. Both
+as values, and as a timing diagram.</p>
+<p>Debugging reveals that the implementation is buggy. It initialises min
+and max to 0 – if the values are negative, this makes the implementation
+fail.</p>
+<p>This concludes the demonstration of our two tools for verification in
+evolution: regression verification and gtts.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, Alexander Weigl.
+      
+      |
+      <a href="../_sources/demofinal/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
