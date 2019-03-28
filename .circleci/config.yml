@@ -24,10 +24,10 @@ jobs:
       - checkout
       - attach_workspace:
           at: build
-      - run:
       - add_ssh_keys:
           fingerprints:
             - "e9:e0:f1:7d:92:a1:83:a8:0b:3a:7b:ec:33:3d:29:f7"            
+      - run:
           name: Install and configure dependencies
           command: |
             npm install -g --silent gh-pages@2.0.1
