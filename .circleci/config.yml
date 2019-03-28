@@ -25,6 +25,9 @@ jobs:
       - attach_workspace:
           at: build
       - run:
+      - add_ssh_keys:
+          fingerprints:
+            - "e9:e0:f1:7d:92:a1:83:a8:0b:3a:7b:ec:33:3d:29:f7"            
           name: Install and configure dependencies
           command: |
             npm install -g --silent gh-pages@2.0.1
@@ -32,7 +35,7 @@ jobs:
             git config user.name "Circle CI Build"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dist build/html
+          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist build/html
     
 workflows:
   version: 2
