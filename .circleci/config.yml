@@ -38,6 +38,11 @@ jobs:
             npm install -g --silent gh-pages@2.0.1
             git config user.email "weigl@ci-build"
             git config user.name "Circle CI Build"
+            
+      - run: 
+          name: xxx
+          command: touch build/html/.nojekyll
+            
       - run:
           name: Deploy docs to gh-pages branch
           command: gh-pages --dotfiles --message "[skip ci] Updates" --dist build/html
