@@ -13,7 +13,12 @@ jobs:
       - run:
           name: Sphinx run
           command: make html
+
+      - run:
+          name: Files
+          command: ls -R 
           
+
       - persist_to_workspace:
           root: build
           paths: html
